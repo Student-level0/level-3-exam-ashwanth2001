@@ -13,6 +13,7 @@ public class Level3CodingExam {
 	 * There are 2 candidates for "Person of the Year 2014". The votes are contained in an ArrayList. Not every voter has capitalized the name of
 	 * their choice in the same way. This question is part of Stanford University's CS106 mid-term exam.
 	 * **/
+	VoteProcessor v = new VoteProcessor();
 	@Test
 	public void testWinner() {
 		ArrayList<String> votes = new ArrayList<String>();
@@ -27,12 +28,12 @@ public class Level3CodingExam {
 		votes.add("Pope francis");
 		votes.add("Pope Francis");
 		votes.add("Edward Snowden");
-
-		assertEquals("pope francis", new VoteProcessor().calculateElectionWinner(votes));
+		assertEquals("pope francis", v.calculateElectionWinner(votes));
 	}
 
 	/** If neither candidate has more votes than the other, report a tie by returning the String "TIE". **/
 	@Test
+	
 	public void testATie() {
 		ArrayList<String> votes = new ArrayList<String>();
 		votes.add("pope francis");
@@ -48,6 +49,7 @@ public class Level3CodingExam {
 	 * More information about the problem is here: http://bit.ly/stanford-exam-part7
 	 * This question is part of Stanford University's CS106 final exam. **/
 	@Test
+	
 	public void testAddMatching() throws Exception {
 		HashMap<String, String> hashmap1 = new HashMap<String, String>();
 		hashmap1.put("Alice", "Healthy");
@@ -65,6 +67,7 @@ public class Level3CodingExam {
 
 		assertEquals(2, new HashMapCalculator().commonKeyValuePairs(hashmap1, hashmap2));
 	}
+	
 }
 
 
